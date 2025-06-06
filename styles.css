@@ -1,46 +1,64 @@
-/* Grundlegendes Styling */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
+.note-section {
+  position: relative;
+  width: 250px;
+  margin: 40px;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 1s ease-in, opacity 1s ease-in;
 }
 
-/* Seitenbereiche */
-header, main, footer {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
+.pin-img {
+  width: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 3;
+  pointer-events: none;
 }
 
-/* Header */
-header {
-  background-color: #e0f0ff;
-  text-align: center;
-  padding: 40px 20px;
+.post-it-img {
+  width: 100%;
+  display: block;
+  z-index: 1;
 }
 
-/* Überschriften */
-h1, h2 {
-  color: #004080;
+.note-text {
+  position: absolute;
+  top: 30px; /* Override with ID */
+  left: 30px; /* Override with ID */
+  right: 30px; /* Override with ID */
+  font-family: handwritten; 
+  z-index: 2;
+  pointer-events: none;
 }
 
-/* Links */
-a {
-  color: #0066cc;
-  text-decoration: none;
+/* Fall effect */
+.note-section.fall {
+  transform: translateY(600px) rotate(25deg);
+  opacity: 0;
+  pointer-events: none;
 }
 
-a:hover {
-  text-decoration: underline;
+@font-face {
+    font-family: 'handwritten'; /* Name the font family */
+    src: url('Assets/Fonts/dreaming-outloud-pro-regular.otf'); /* Path to the font file */
 }
 
-/* Footer */
-footer {
-  margin-top: 40px;
-  text-align: center;
-  font-size: 0.9em;
-  color: #666;
+#mainBody{
+  background-image: url('Assets/Backgrounds/cartboardSheet.png');
+  background-size: 90%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
