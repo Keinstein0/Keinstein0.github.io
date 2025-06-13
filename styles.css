@@ -1,24 +1,27 @@
 .note-section {
   position: relative;
-  width: 250px;
   margin: 40px;
   display: inline-block;
   cursor: pointer;
   transition: transform 1s ease-in, opacity 1s ease-in;
 }
 
+
 .pin-img {
-  width: 50px;
+  max-width: 50px;
+  height:auto;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, 0%);
   z-index: 3;
   pointer-events: none;
+  container-name: sidebar
 }
 
 .post-it-img {
-  width: 100%;
+  max-width: 100%;
+  height:auto;
   display: block;
   z-index: 1;
 }
@@ -31,7 +34,16 @@
   font-family: handwritten; 
   z-index: 2;
   pointer-events: none;
+ /* font-size: 15px; */
+
 }
+/* 
+@media only screen and (max-width: 200px) {
+  .note-text {
+    font-size: 5px;
+  }
+}
+*/ 
 
 /* Fall effect */
 .note-section.fall {
@@ -47,7 +59,22 @@
 
 #mainBody{
   background-image: url('Assets/Backgrounds/cartboardSheet.png');
-  background-size: 90%;
+  background-size: 120%;
+}
+
+
+#HeaderText{
+  margin: 2%;
+}
+
+#HeaderSection{
+  max-width: 500px;
+  min-width: 200px;
+}
+
+#IntroductionSection{
+  max-width: 300px;
+  min-width: 200px;
 }
 
 

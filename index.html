@@ -7,16 +7,22 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body id="mainBody">
-  <header class="note-section" onclick="dropNote(this)">
+  <header class="note-section" id="HeaderSection" onclick="dropNote(this)">
     <img class="pin-img" src="Assets/Backgrounds/Pin-01.png", alt="Pin">
-    <img class="post-it-img" src="Assets/Backgrounds/PostIt-01.png" alt="Post-it">
-  </header>
+    <img class="post-it-img" id= HeaderPIT src="Assets/Backgrounds/PostIt-02.png" alt="Post-it">
+    <h1 class="note-text" id="HeaderText"  data-font-ratio="0.2">WELCOME TO MY WEBSITE :D</h1>
+  </header> 
 
   <main>
-    <section class="note-section" onclick="dropNote(this)">
+    <section class="note-section" onclick="dropNote(this)" id="IntroductionSection">
     <img class="pin-img" src="Assets/Backgrounds/Pin-01.png" alt="Pin" />
     <img class="post-it-img" src="Assets/Backgrounds/PostIt-01.png" alt="Post-it" />
-    <div class="note-text">Hello World</div>
+
+    
+    <h2 class="note-text" data-font-ratio="0.1"> Info </h2>
+    <p class="note-text" data-font-ratio="0.15">
+      Hallo, ich bin Alexander straub und bin gerade in der IMS an der Alten Kanti und Berufsbildung Baden. Das Spannende an der Informatik finde ich das Umsetzen von Ideen zum fertigen Produkt. 
+    </p>
     </section>
   </main>
 
@@ -28,5 +34,22 @@
   function dropNote(section) {
     section.classList.add('fall');
   }
+
+  function resizeFonts() {
+    document.querySelectorAll('.note-section').forEach(container => {
+      <!-- Put in second for loop because it only picks the first value-->
+      const text = container.querySelector('.note-text');
+      const ratio = parseFloat(text.dataset.fontRatio) || 0.1; // default to 50% if not set
+      console.log(ratio)
+      const height = container.clientHeight;
+      text.style.fontSize = `${height * ratio}px`;
+      console.log(`${height * ratio}px`);
+    });
+  }
+
+  resizeFonts();
+
+  window.addEventListener('resize', resizeFonts);
+
 </script>
 </html>
