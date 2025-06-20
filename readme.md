@@ -13,21 +13,20 @@ Heute habe ich das Grobdesign der Webseite auf Papier designed. Ich Konnte zudem
 
 ## 13.6
 
-- [ ] PostIt Class reactive machen
+- [x] PostIt Class reactive machen
 - [ ] Layout nach plan erstellen
-- [ ] PostIts abwechslungsreicher machen (Neue PostIt texturen finden)
+- [x] PostIts abwechslungsreicher machen (Neue PostIt texturen finden)
 - [ ] Pins abwechslungsreicher machen (neue Pin texturen finden)
 
-✍️ Heute habe ich... (50-100 Wörter)
+Ich konnte heute nur die Reaktivität verbessern. Dabei kam ich auf das Problem dass der Text nicht geresized wird. Das konnte ich implementieren, muss aber noch fertig gemacht werden.
 
 ☝️ Vergessen Sie nicht, Ihre angepasste Website auf github hochzuladen
 
 ## 20.7
 
-- [ ] ...
-- [ ] ...
-- [ ] ...
-- [ ] ...
+- [ ] Layout nach plan Erstellen
+- [ ] mehr assets sammeln
+- [x] Reactivity fix einbringen (nach kommentar)
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
