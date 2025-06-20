@@ -6,15 +6,15 @@
   <title>Meine persönliche Startseite</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body id="mainBody" onload="resizeFonts()">
+<body id="mainBody" onload="resizeFonts(); randomizeOffsets()">
   <header class="note-section" id="HeaderSection" onclick="dropNote(this)">
     <img class="pin-img" src="Assets/Backgrounds/Pin-01.png", alt="Pin">
     <img class="post-it-img" id= HeaderPIT src="Assets/Backgrounds/PostIt-02.png" alt="Post-it">
-    <h1 class="note-text" id="HeaderText"  data-font-ratio="0.1">WELCOME TO MY WEBSITE :D</h1>
+    <h1 class="note-text" id="HeaderText"  data-font-ratio="0.2">WELCOME TO MY WEBSITE :D</h1>
   </header> 
 
   <main>
-    <section class="note-section" onclick="dropNote(this)" id="IntroductionSection">
+    <section class="note-section offsetter" onclick="dropNote(this)" id="IntroductionSection">
       <img class="pin-img" src="Assets/Backgrounds/Pin-01.png" alt="Pin" />
       <img class="post-it-img" src="Assets/Backgrounds/PostIt-01.png" alt="Post-it" />
 
@@ -27,7 +27,7 @@
 
     </section>
 
-    <section class="note-section" onclick="dropNote(this)" id="IntroductionSection">
+    <section class="note-section offsetter" onclick="dropNote(this)" id="IntroductionSection">
       <img class="tape-img" src="Assets/Backgrounds/tape3.png" alt="Pin" />
       <img class="post-it-img note-img" src="Assets/Images/me.jpg" alt="Post-it" />
     </section>
@@ -39,7 +39,7 @@
       </a>
     </section>
 
-    <section class="note-section" onclick="dropNote(this)" id="IntroductionSection">
+    <section class="note-section offsetter" onclick="dropNote(this)" id="IntroductionSection">
       <img class="pin-img" src="Assets/Backgrounds/Pin-01.png" alt="Pin" />
       <img class="post-it-img" src="Assets/Backgrounds/PostIt-01.png" alt="Post-it" />
 
@@ -50,7 +50,7 @@
       </p>
     </section>
 
-    <section class="note-section" onclick="dropNote(this)" id="IntroductionSection">
+    <section class="note-section offsetter" onclick="dropNote(this)" id="IntroductionSection">
       <img class="pin-img" src="Assets/Backgrounds/Pin-01.png" alt="Pin" />
       <img class="post-it-img" src="Assets/Backgrounds/PostIt-01.png" alt="Post-it" />
 
@@ -83,6 +83,17 @@
         text.style.fontSize = `${height * ratio}px`;
         console.log(`${height * ratio}px`);
       });
+    });
+  }
+  
+  function randomizeOffsets(){
+    document.querySelectorAll('.offsetter').forEach(box => {
+      const offsetScale = 100
+      xOffset = (Math.random() - .5) * offsetScale
+      yOffset = (Math.random() - .5) * offsetScale
+
+      box.style.setProperty('--x-offset', `${xOffset}px`);
+      box.style.setProperty('--y-offset', `${yOffset}px`);
     });
   }
 

@@ -6,11 +6,10 @@
   
     -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 29px #222);
-
 }
 .note-section:hover{
   transform:rotate(-3deg);
-  transition: transform 0s ease-in
+  transition: transform 0s ease-in;
 }
 
 .pin-img {
@@ -38,7 +37,7 @@
 }
 
 .post-it-img {
-  max-width: 100%;
+  width: 100%;
   height:auto;
   display: block;
   z-index: 1;
@@ -46,10 +45,10 @@
 
 .note-text {
   position: absolute;
-  top: 30px;
+  top: 10%;
   /*top: 30px; /* Override with ID */
-  left: 30px; /* Override with ID */
-  right: 30px; /* Override with ID */
+  left: 10%; /* Override with ID */
+  right: 10%; /* Override with ID */
   font-family: handwritten; 
   z-index: 2;
   pointer-events: none;
@@ -58,7 +57,7 @@
 }
 
 .note-img{
-  max-width:70%;
+  max-width:80%;
   transform:rotate(-3deg);
   z-index: 2;
   pointer-events: none;
@@ -98,18 +97,26 @@
   display: inline-block;
   cursor: pointer;
 
-
-
 }
 
 .drawing-section:hover{
-  transform:rotate(-3deg)
+  transform:rotate(-3deg);
+  transition: transform 0s ease-in;
 }
+
 
 .drawing-text{
   text-decoration: none;
-  
 }
+
+.offsetter{
+  transform: translate(var(--x-offset, 0px), var(--y-offset, 0px)) rotate(0deg);
+}
+.offsetter:hover{
+  transform: translate(var(--x-offset, 0px), var(--y-offset, 0px)) rotate(-3deg);
+}
+
+
 a{
   text-decoration: none;
   color: black
@@ -127,20 +134,19 @@ a:hover{
 #mainBody{
   background-image: url('Assets/Backgrounds/cartboardSheet.png');
   background-size: 120%;
+  display: grid
 }
 
 
-#HeaderText{
-  margin: 2%;
-}
+
 
 #HeaderSection{
-  max-width: 500px;
+  max-width: 80%;
   min-width: 200px;
 }
 
 #IntroductionSection{
-  max-width: 300px;
+  max-width: 35%;
   min-width: 200px;
 }
 

@@ -24,8 +24,8 @@ Ich konnte heute nur die Reaktivität verbessern. Dabei kam ich auf das Problem 
 
 ## 20.7
 
-- [ ] Layout nach plan Erstellen
-- [ ] mehr assets sammeln
+- [x] Layout nach plan Erstellen
+- [x] mehr assets sammeln
 - [x] Reactivity fix einbringen (nach kommentar)
 
 ✍️ Heute habe ich... (50-100 Wörter)
@@ -34,8 +34,9 @@ Ich konnte heute nur die Reaktivität verbessern. Dabei kam ich auf das Problem 
 
 ## 27.7 Abschluss
 
-- [ ] ...
-- [ ] ...
+- [x] Text grösser gestalten
+- [ ] übersichtlichkeit verbessern
+- [ ] Projekte hinzufügen
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
