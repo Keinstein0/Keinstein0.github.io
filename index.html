@@ -10,7 +10,7 @@
   <header class="note-section" id="HeaderSection" onclick="dropNote(this)">
     <img class="pin-img" src="Assets/Backgrounds/Pin-01.png", alt="Pin">
     <img class="post-it-img" id= HeaderPIT src="Assets/Backgrounds/PostIt-02.png" alt="Post-it">
-    <h1 class="note-text" id="HeaderText"  data-font-ratio="0.2">WELCOME TO MY WEBSITE :D</h1>
+    <h1 class="note-text" id="HeaderText"  data-font-ratio="0.13">WELCOME TO MY WEBSITE :D</h1>
   </header> 
 
   <main>
@@ -34,7 +34,7 @@
 
     <section class="drawing-section" onclick="dropNote(this)" id="IntroductionSection">
       <a href="https://github.com/Keinstein0">
-        <h2 class="drawing-text"> github.com/Keinstein0</h2>
+        <h2 class="drawing-text" data-font-ratio="0.08"> github.com/Keinstein0</h2>
         <img class="drawing-icon" id="github-icon" src="Assets/Images/github.png" alt="Post-it" />
       </a>
     </section>
@@ -73,8 +73,8 @@
   }
 
   function resizeFonts() {
-    document.querySelectorAll('.note-section').forEach(container => {
-      document.querySelectorAll('.note-text').forEach(text => {
+    document.querySelectorAll('.note-section , .drawing-section').forEach(container => {
+      document.querySelectorAll('.note-text, .drawing-text').forEach(text => {
         <!-- Put in second for loop because it only picks the first value-->
         
         const ratio = parseFloat(text.dataset.fontRatio) || 0.1; // default to 50% if not set

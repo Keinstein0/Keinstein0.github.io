@@ -13,7 +13,7 @@
 }
 
 .pin-img {
-  max-width: 50px;
+  max-width: 20%;
   height:auto;
   position: absolute;
   top: 0;
@@ -141,7 +141,7 @@ a:hover{
 
 
 #HeaderSection{
-  max-width: 80%;
+  max-width: 50%;
   min-width: 200px;
 }
 
