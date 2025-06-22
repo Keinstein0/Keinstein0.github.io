@@ -28,17 +28,16 @@ Ich konnte heute nur die Reaktivität verbessern. Dabei kam ich auf das Problem 
 - [x] mehr assets sammeln
 - [x] Reactivity fix einbringen (nach kommentar)
 
-✍️ Heute habe ich... (50-100 Wörter)
-
-☝️ Vergessen Sie nicht, Ihre angepasste Website auf github hochzuladen
+Ich konnte die Schriftänderung fertig implementieren und die Reaktivität meiner Webseite verbessern. Zudem konnte ich das layout nach plan erstellen. Ich konnte ausserdem noch weitere animationen einbringen und den Objekten einen Zufälligen offset geben. 
 
 ## 27.7 Abschluss
 
 - [x] Text grösser gestalten
 - [ ] übersichtlichkeit verbessern
-- [ ] Projekte hinzufügen
+- [ ] Projekte als zusätzliche notes hinzufügen (SPainter, Cookie Clicker)
+- [ ] Grammatikfehler korrigieren
 
-✍️ Heute habe ich... (50-100 Wörter)
+
 
 ☝️ Vergessen Sie nicht, Ihre angepasste Website auf github hochzuladen
 
