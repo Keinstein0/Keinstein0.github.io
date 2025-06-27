@@ -6,6 +6,9 @@
   
     -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 29px #222);
+
+  vertical-align: top; /* <--- Add this line */
+
 }
 .note-section:hover{
   transform:rotate(-3deg);
@@ -97,6 +100,8 @@
   display: inline-block;
   cursor: pointer;
 
+  vertical-align: top;
+
 }
 
 .drawing-section:hover{
@@ -154,11 +159,19 @@ a:hover{
   max-width: 50%;
 }
 
+#reload-icon{
+  max-width: 50%;
+}
 
+#gotoImage{
+  top: 35%;
+  left: 20%;
+  max-width: 50%;
+}
 
-
-
-
+#main{
+  align-self: top;
+}
 
 
 

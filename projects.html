@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meine persönliche Startseite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="mainBody" onload="resizeFonts(); randomizeOffsets()">
+  <header class="note-section" id="HeaderSection" onclick="dropNote(this)">
+    <img class="pin-img" src="Assets/Backgrounds/Pin-01.png", alt="Pin">
+    <img class="post-it-img" id= HeaderPIT src="Assets/Backgrounds/PostIt-02.png" alt="Post-it">
+    <h1 class="note-text" id="HeaderText"  data-font-ratio="0.18">MY PROJECTS</h1>
+  </header> 
+
+  <main id="main">
+    <section class="note-section offsetter" onclick="dropNote(this)" id="IntroductionSection">
+      <img class="pin-img" src="Assets/Backgrounds/Pin-01.png" alt="Pin" />
+      <img class="post-it-img" src="Assets/Backgrounds/PostIt-03.png" alt="Post-it" />
+
+      <div class="note-content">
+        <h2 class="note-text" data-font-ratio="0.1"> SPainter </h2>
+        <p class="note-text" data-font-ratio="0.06">
+          <br><br><br> SPainter ist ein Grafikrenderer der in der Konsole arbeitet. Er erhälte einige features, wie das speichern/laden von bildern in einem eigenen Bildformat und das registrieren der Maus / Tastatur
+        </p>
+      </div>
+    </section>
+
+    <section class="note-section offsetter" onclick="dropNote(this)" id="IntroductionSection">
+      <img class="tape-img" src="Assets/Backgrounds/tape3.png" alt="Pin" />
+      <img class="post-it-img note-img" src="Assets/Images/SPainter.png" alt="Post-it" />
+    </section>
+
+    <section class="note-section offsetter" onclick="dropNote(this)" id="IntroductionSection">
+      <img class="pin-img" src="Assets/Backgrounds/Pin-01.png" alt="Pin" />
+      <img class="post-it-img" src="Assets/Backgrounds/PostIt-01.png" alt="Post-it" />
+
+      <div class="note-content">
+        <h2 class="note-text" data-font-ratio="0.1"> Create Addon Hub </h2>
+        <p class="note-text" data-font-ratio="0.06">
+          <br><br><br> Create Addon Hub ist eine seite zur strukturierung von addons für die Minecraft Create mod. Dort sind einige der wichtigsten addons aufgeführ und informationen dazu aufgelistet.
+        </p>
+      </div>
+    </section>
+
+    <section class="note-section offsetter" onclick="dropNote(this)" id="IntroductionSection">
+      <img class="tape-img" src="Assets/Backgrounds/tape3.png" alt="Pin" />
+      <img class="post-it-img note-img" src="Assets/Images/addonhub.png" alt="Post-it" />
+    </section>
+
+
+    <section class="drawing-section" onclick="dropNote(this)" id="IntroductionSection">
+      <div onclick="location.reload();">
+        <h2 class="drawing-text" data-font-ratio="0.09"> respawn notes</h2>
+        <img class="drawing-icon" id="reload-icon" src="Assets/Images/reload.png" alt="Post-it" />
+      </div>
+    </section>
+
+    <section class="drawing-section offsetter" onclick="dropNote(this)" id="IntroductionSection">
+      <a href="index.html">
+        <h2 class="drawing-text" data-font-ratio="0.1">Home</h2>
+        <img class="drawing-text" id="gotoImage" src="Assets/Images/goto.png" alt="Post-it">
+          
+      </a>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p></p>
+  </footer>
+</body>
+<script>
+  function dropNote(section) {
+    section.classList.add('fall');
+  }
+
+  function resizeFonts() {
+    document.querySelectorAll('.note-section , .drawing-section').forEach(container => {
+      document.querySelectorAll('.note-text, .drawing-text').forEach(text => {
+        <!-- Put in second for loop because it only picks the first value-->
+        
+        const ratio = parseFloat(text.dataset.fontRatio) || 0.1; // default to 50% if not set
+        console.log(ratio)
+        const height = container.clientHeight;
+        text.style.fontSize = `${height * ratio}px`;
+        console.log(`${height * ratio}px`);
+      });
+    });
+  }
+  
+  function randomizeOffsets(){
+    document.querySelectorAll('.offsetter').forEach(box => {
+      const offsetScale = 100
+      xOffset = (Math.random() - .5) * offsetScale
+      yOffset = (Math.random() - .5) * offsetScale
+
+      box.style.setProperty('--x-offset', `${xOffset}px`);
+      box.style.setProperty('--y-offset', `${yOffset}px`);
+    });
+  }
+
+  resizeFonts();
+
+  window.addEventListener('resize', resizeFonts);
+
+</script>
+</html>
