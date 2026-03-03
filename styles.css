@@ -46,17 +46,22 @@
   z-index: 1;
 }
 
-.note-text {
+.note-text-body {
   position: absolute;
   top: 10%;
-  /*top: 30px; /* Override with ID */
-  left: 10%; /* Override with ID */
-  right: 10%; /* Override with ID */
-  font-family: handwritten; 
-  z-index: 2;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  flex-direction: column;
   pointer-events: none;
+  z-index: 2;
+}
 
- /* font-size: 15px; */
+.note-text {
+  position: relative; /* Changed from absolute */
+  font-family: handwritten;
+  margin: 0; 
+  padding-bottom: 5px;
 }
 
 .note-img{
