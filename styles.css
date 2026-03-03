@@ -10,6 +10,26 @@
   vertical-align: top; /* <--- Add this line */
 
 }
+
+.note-text-url {
+  cursor:pointer;
+  text-decoration: underline;
+  pointer-events: auto;
+}
+
+.note-text-url:hover{
+  color : rgb(0, 0, 55)
+}
+
+.note-text-url:link{
+  color: rgb(0, 0, 153);
+}
+
+.note-text-url:visited{
+  color : rgb(33, 0, 80)
+}
+
+
 .note-section:hover{
   transform:rotate(-3deg);
   transition: transform 0s ease-in;
