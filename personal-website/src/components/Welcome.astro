@@ -1,3 +1,20 @@
 ---
+import Sticker from '../components/stickers/Sticker.svelte'
 
+import Pin01 from '../assets/images/backgrounds/Pin-01.png'
+import PostIt01 from '../assets/images/backgrounds/PostIt-01.png'
+
+import {Content as TestText} from '../content/testcontent.md'
 ---
+
+<div class="container">
+    <Sticker pinImage={Pin01} postItImage={PostIt01}>
+        <TestText />
+    </Sticker>
+</div>
+
+<style>
+    .container{
+        display: flex;
+    }
+</style>
