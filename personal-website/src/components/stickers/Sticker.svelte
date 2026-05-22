@@ -2,15 +2,18 @@
     let {
         pinImage,
         postItImage,
-        postItScale = 30,
-        children
+        postItScale = 60,
+        children,
+        fontSizeMultiplier = 1
     } = $props();
 </script>
 
 <div class="container" style="--postit-width: {postItScale}%; --post-it-texture: url({postItImage.src})">
     <img src={pinImage.src} class="pin-img" alt="Pin holding the post-it">
 
-    <div class="text-container">
+    <img src={postItImage.src} class="postit-background" alt="Post-it note background">
+
+    <div class="text-container" style="--fontSizeMultiplier: {fontSizeMultiplier}">
         <div class="text-content">
             {@render children?.()}
         </div>
@@ -26,27 +29,19 @@
     .container {
         container-type: inline-size;
         position: relative;
-
-        display: grid;
-
-        grid-template-rows: auto; 
         
         width: var(--postit-width);
         max-width: 380px;
         min-width: 200px;
-
-        aspect-ratio: 1 / 1; 
-
-        background-image: var(--post-it-texture);
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
         
         box-sizing: border-box;
+        transition: transform 20ms;
+    }
 
-        padding: 4cqw;
-
-        transition: 20ms;
+    .postit-background {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 
     @media (max-width: 768px) {
@@ -62,26 +57,27 @@
 
     .pin-img {
         position: absolute;
-        top: 0;
+        top: -3%; 
         left: 50%;
-        transform: translate(-50%, -30%);
-
+        transform: translateX(-50%);
         width: 20cqw;
-        height: fit-content;
-
-
-        margin-top: 8px;
-        z-index: 2;
+        height: auto;
+        z-index: 10;
     }
 
+
     .text-container {
-        display: grid;
-        place-items: top;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         box-sizing: border-box;
-
-        padding-top: 0rem;
+        
+        display: grid;
+        place-items: top; 
+        padding: 8cqw; 
+        padding-top: 10cqw; 
     }
 
     .text-content{
@@ -108,24 +104,24 @@
 
     /* Headings scale proportionally based on the base fluid size via 'em' */
     .text-content :global(h1) {
-        font-size: 1.4em; /* 1.4x larger than the base font-size */
+        font-size: calc(1.4em * var(--fontSizeMultiplier)); /* 1.4x larger than the base font-size */
         font-weight: bold;
         line-height: 1.2;
     }
 
     .text-content :global(h2) {
-        font-size: 1.2em;
+        font-size: calc(1.2em * var(--fontSizeMultiplier));
         font-weight: bold;
         line-height: 1.2;
     }
 
     /* Paragraphs match the base fluid size perfectly */
     .text-content :global(p) {
-        font-size: 1em; 
+        font-size: calc(1.0em * var(--fontSizeMultiplier));
         line-height: 1.35;
     }
 
     .text-content :global(small) {
-        font-size: 0.8em;
+        font-size: calc(0.8em * var(--fontSizeMultiplier));
     }
 </style>

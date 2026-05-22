@@ -1,20 +1,16 @@
 ---
 import Sticker from '../components/stickers/Sticker.svelte'
+import Image from '../components/stickers/Image.svelte'
 
 import Pin01 from '../assets/images/backgrounds/Pin-01.png'
 import PostIt01 from '../assets/images/backgrounds/PostIt-01.png'
+import Tape01 from '../assets/images/backgrounds/tape1.png'
 
+import Me from '../assets/images/data/me.jpg'
 import {Content as TestText} from '../content/testcontent.md'
 ---
 
-<div class="container">
-    <Sticker pinImage={Pin01} postItImage={PostIt01}>
-        <TestText />
-    </Sticker>
-</div>
-
-<style>
-    .container{
-        display: flex;
-    }
-</style>
+<Sticker pinImage={Pin01} postItImage={PostIt01} fontSizeMultiplier={1.050}>
+    <TestText />
+</Sticker>
+<Image tapeImage={Tape01} image={Me} alt="A picture of me" />

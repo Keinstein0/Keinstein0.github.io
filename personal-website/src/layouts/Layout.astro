@@ -32,5 +32,22 @@ import background from '../assets/images/cartboardSheet.png';
         background-size: 100%; 
         background-position: center;
         background-repeat: repeat-y;
+
+        display: grid;
+        /* 1. Creates as many columns as fit, but forces a wrap if space drops below 280px */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        
+        /* 2. Adds space between your sticker and your image */
+        gap: 40px; 
+        
+        /* 3. Centers the items on the screen when they stack */
+        justify-items: center;
+        align-items: start;
+        
+        padding: 30px;
+        box-sizing: border-box;
+
+        width: 100vw;
+        height: 100vh;
     }
 </style>
