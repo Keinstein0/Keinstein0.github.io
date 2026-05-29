@@ -4,11 +4,24 @@
         tapeImage,
         alt,
         width = 100,
-        height = 100
+        maxRotation = 6, // max 6 degrees left or right
+        maxOffset = 2  // max 10px shift
     } = $props();
+
+    const randomRotate = (Math.random() * maxRotation * 2 - maxRotation).toFixed(1);
+    const randomX = (Math.random() * maxOffset * 2 - maxOffset).toFixed(4);
+    const randomY = (Math.random() * maxOffset * 2 - maxOffset).toFixed(4);
+
+    const hoverModifier = randomRotate < 0 ? -3 : 3;
 </script>
 
-<div class="container" style="--pic-width: {width}%; --pic-height: {height}%">
+<div class="container" 
+style="--pic-width: {width}%;
+--base-rotate: {randomRotate}deg;
+--hover-rotate: {parseFloat(randomRotate) + hoverModifier}deg;
+--x-offset: {randomX}vw;
+--y-offset: {randomY}vh;
+">
     <img src={tapeImage.src} class="tape-img" alt="Tape holding the image">
 
     <div class="image-container">
@@ -24,18 +37,20 @@
         grid-template-rows: 1fr; 
         
         width: var(--pic-width);
-        max-width: 380px;
+        max-width: 660px;
         min-width: 200px;
         aspect-ratio: 1 / 1; 
 
         box-sizing: border-box;
         padding: 4cqw;
         padding-top: 0cqw; 
-        transition: transform 20ms;
+
+        transform: rotate(var(--base-rotate)) translate(var(--x-offset), var(--y-offset));
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
     }
 
-    .container:hover {
-        transform: rotate(3deg);
+    .container:hover{
+        transform: rotate(var(--hover-rotate)) translate(var(--x-offset), var(--y-offset)) scale(1.03);
     }
 
     .tape-img {

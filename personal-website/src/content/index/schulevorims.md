@@ -1,0 +1,2 @@
+## Vor der IMS
+Vor der IMS habe ich meinen Bez-Abschluss in Kölliken gemacht, wo ich auch mit der Programmierung in Python begonnen habe. Zu diesem Zeitpunkt verfügte ich über Sprachkenntnisse in: Deutsch, Französisch und Englisch.

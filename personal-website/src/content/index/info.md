@@ -1,0 +1,2 @@
+## Info
+Hallo, ich bin Alexander Straub und besuche derzeit die IMS an der Alten Kanti und der Berufsbildung Baden. Das Spannende an der Informatik ist für mich die Umsetzung von Ideen in fertige Produkte. Derzeit bin ich im 2. Jahr.

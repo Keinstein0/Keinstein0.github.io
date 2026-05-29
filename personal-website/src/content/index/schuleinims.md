@@ -1,0 +1,2 @@
+## Schule Jetzt
+Nun in der IMS konnte ich meine Kenntnisse in Wirtschaft sowie dem Finanz und Rechnungswesen erweitern. Zudem arbeite ich auf die Sprachzertifikate C1 in Englisch und das DELF in Französisch hin. 

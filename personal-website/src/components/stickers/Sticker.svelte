@@ -1,127 +1,76 @@
 <script lang="js">
     let {
-        pinImage,
-        postItImage,
-        postItScale = 60,
-        children,
-        fontSizeMultiplier = 1
+        image,
+        href,
+        text,
+        maxRotation = 6, // max 6 degrees left or right
+        maxOffset = 2  // max 2vh shift
     } = $props();
+
+    const randomRotate = (Math.random() * maxRotation * 2 - maxRotation).toFixed(1);
+    const randomX = (Math.random() * maxOffset * 2 - maxOffset).toFixed(4);
+    const randomY = (Math.random() * maxOffset * 2 - maxOffset).toFixed(4);
+
+    const hoverModifier = randomRotate < 0 ? -3 : 3;
 </script>
 
-<div class="container" style="--postit-width: {postItScale}%; --post-it-texture: url({postItImage.src})">
-    <img src={pinImage.src} class="pin-img" alt="Pin holding the post-it">
-
-    <img src={postItImage.src} class="postit-background" alt="Post-it note background">
-
-    <div class="text-container" style="--fontSizeMultiplier: {fontSizeMultiplier}">
-        <div class="text-content">
-            {@render children?.()}
-        </div>
-    </div>
+<div class="container"
+style="
+--base-rotate: {randomRotate}deg;
+--hover-rotate: {parseFloat(randomRotate) + hoverModifier}deg;
+--x-offset: {randomX}vw;
+--y-offset: {randomY}vh;
+">
+    <a href = {href}>
+        <p><strong>{text}</strong></p>
+        <img src={image.src} class="sticker-img" alt="{text} sticker">
+    </a>
 </div>
 
 <style>
-    @font-face {
-        font-family: 'handwritten'; /* Name the font family */
-        src: url('../../assets/fonts/dreaming-outloud-pro-regular.otf'); /* Path to the font file */
-    }
-
     .container {
-        container-type: inline-size;
-        position: relative;
-        
-        width: var(--postit-width);
-        max-width: 380px;
-        min-width: 200px;
-        
         box-sizing: border-box;
+        padding: 4cqw;
+        padding-top: 0cqw; 
         transition: transform 20ms;
+        opacity: 0.75;
+
+        transform: rotate(var(--base-rotate)) translate(var(--x-offset), var(--y-offset));
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
     }
 
-    .postit-background {
-        width: 100%;
+
+    .sticker-img {
+        width: 33%;
         height: auto;
         display: block;
+
     }
 
-    @media (max-width: 768px) {
-        .container {
-            min-width: 240px; 
-            max-width: 320px; 
-        }
+    a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
     }
 
-    .container:hover{
-        transform: rotate(3deg);
+    a:hover {
+        text-decoration: underline;
+        color: #00028a;
     }
 
-    .pin-img {
-        position: absolute;
-        top: -3%; 
-        left: 50%;
-        transform: translateX(-50%);
-        width: 20cqw;
-        height: auto;
-        z-index: 10;
+    a:hover .sticker-img {
+        filter: invert(8%) sepia(100%) saturate(7087%) hue-rotate(247deg) brightness(58%) contrast(142%);
     }
 
-
-    .text-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        
-        display: grid;
-        place-items: top; 
-        padding: 8cqw; 
-        padding-top: 10cqw; 
-    }
-
-    .text-content{
-        font-size: clamp(0.75rem, 7cqw, 1.45rem);
-        font-family: handwritten;
-
-        padding: 4cqw;
-        padding-top: 0;
+    p {
         text-align: center;
-        word-break: break-word; 
+        margin-top: 0.5em;
+        font-family: 'handwritten', cursive; /* Use the handwritten font */
+        font-size: 24px;
 
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .text-content :global(*) {
-        margin: 0 0 0.4em 0;
-        word-break: break-word;
-
-    }
-    .text-content :global(*:last-child) {
-        margin-bottom: 0;
-    }
-
-    /* Headings scale proportionally based on the base fluid size via 'em' */
-    .text-content :global(h1) {
-        font-size: calc(1.4em * var(--fontSizeMultiplier)); /* 1.4x larger than the base font-size */
-        font-weight: bold;
-        line-height: 1.2;
-    }
-
-    .text-content :global(h2) {
-        font-size: calc(1.2em * var(--fontSizeMultiplier));
-        font-weight: bold;
-        line-height: 1.2;
-    }
-
-    /* Paragraphs match the base fluid size perfectly */
-    .text-content :global(p) {
-        font-size: calc(1.0em * var(--fontSizeMultiplier));
-        line-height: 1.35;
-    }
-
-    .text-content :global(small) {
-        font-size: calc(0.8em * var(--fontSizeMultiplier));
+        
     }
 </style>
