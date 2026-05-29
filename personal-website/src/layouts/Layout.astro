@@ -35,7 +35,10 @@ import background from '../assets/images/cartboardSheet.png';
 
         display: grid;
         /* 1. Creates as many columns as fit, but forces a wrap if space drops below 280px */
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        /* Forces a maximum of 3 columns, but scales down beautifully on small screens */
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        max-width: calc((3 * 280px) + (2 * 80px) + 60px); /* (3 cols * min-width) + (2 gaps * 80px) + padding */
+        margin: 0 auto; /* Centers the whole layout on wide screens */
         
         /* 2. Adds space between your sticker and your image */
         gap: 80px; 
