@@ -1,0 +1,70 @@
+---
+import PostIt from '../components/stickers/PostIt.svelte'
+import Image from '../components/stickers/Image.svelte'
+import Sticker from '../components/stickers/Sticker.svelte'
+
+import PostIt01 from '../assets/images/backgrounds/PostIt-01.png'
+import PostIt02 from '../assets/images/backgrounds/PostIt-02.png'
+import PostIt03 from '../assets/images/backgrounds/PostIt-03.png'
+
+import Pin01 from '../assets/images/backgrounds/Pin-01.png'
+import Pin02 from '../assets/images/backgrounds/Pin-02.png'
+
+import Tape01 from '../assets/images/backgrounds/tape1.png'
+import Tape02 from '../assets/images/backgrounds/tape2.png'
+import Tape03 from '../assets/images/backgrounds/tape3.png'
+
+import StickerGithub from '../assets/images/icons/github.svg'
+import StickerArrowLeft from '../assets/images/icons/arrowleft.svg'
+
+
+import Me from '../assets/images/data/me.jpg'
+import Code from '../assets/images/data/code.png'
+
+
+import {Content as TestText} from '../content/testcontent.md'
+
+import {Content as Title} from '../content/index/title.md'
+import {Content as Info} from '../content/index/info.md'
+import {Content as SchulevorIMS} from '../content/index/schulevorims.md'
+import {Content as SchuleinIMS} from '../content/index/schuleinims.md'
+import {Content as Informatik} from '../content/index/informatik.md'
+import {Content as Technologien} from '../content/index/technologien.md'
+
+---
+<div style="grid-column: 1 / -1; width: 100%; justify-content: center; display: flex">
+    <PostIt pinImage={Pin02} postItImage={PostIt02} postItScale={40}>
+        <Title />
+    </PostIt>
+</div>
+
+<PostIt pinImage={Pin01} postItImage={PostIt01} fontSizeMultiplier={0.8} >
+    <Info />
+</PostIt>
+
+
+<Image tapeImage={Tape01} image={Me} alt="A picture of me" />
+
+
+<Sticker href="https://github.com/Keinstein0" text="github.com/Keinstein0" image={StickerGithub} />
+
+<Image tapeImage={Tape01} image={Code} alt="A picture of code" />
+
+<PostIt pinImage={Pin01} postItImage={PostIt03} fontSizeMultiplier={0.8}>
+    <SchulevorIMS />
+</PostIt>
+
+<PostIt pinImage={Pin02} postItImage={PostIt01} fontSizeMultiplier={0.8}>
+    <SchuleinIMS />
+</PostIt>
+
+<PostIt pinImage={Pin02} postItImage={PostIt01} fontSizeMultiplier={0.8}>
+    <Informatik />
+</PostIt>
+
+<PostIt pinImage={Pin02} postItImage={PostIt03} fontSizeMultiplier={0.8}>
+    <Technologien />
+</PostIt>
+
+<Sticker href="./projects" text="my projects" image={StickerArrowLeft} />
+

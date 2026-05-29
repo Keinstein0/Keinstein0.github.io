@@ -1,0 +1,87 @@
+---
+import PostIt from '../components/stickers/PostIt.svelte'
+import Image from '../components/stickers/Image.svelte'
+import Sticker from '../components/stickers/Sticker.svelte'
+
+import PostIt01 from '../assets/images/backgrounds/PostIt-01.png'
+import PostIt02 from '../assets/images/backgrounds/PostIt-02.png'
+import PostIt03 from '../assets/images/backgrounds/PostIt-03.png'
+
+import Pin01 from '../assets/images/backgrounds/Pin-01.png'
+import Pin02 from '../assets/images/backgrounds/Pin-02.png'
+
+import Tape01 from '../assets/images/backgrounds/tape1.png'
+import Tape02 from '../assets/images/backgrounds/tape2.png'
+import Tape03 from '../assets/images/backgrounds/tape3.png'
+
+import StickerGithub from '../assets/images/icons/github.svg'
+import StickerArrowRight from '../assets/images/icons/arrowright.svg'
+
+
+import Trello from '../assets/images/data/Trello.png'
+import Spainter from '../assets/images/data/SPainter.png'
+import Newpainter from '../assets/images/data/Newpainter.gif'
+import Mindfrontend from '../assets/images/data/mindentsalzer.jpeg'
+import Mindentsalzer from '../assets/images/data/mindfrontendpng.png'
+import WhiteboardApp from '../assets/images/data/Whiteboard0.png'
+import SpotifakeApp from '../assets/images/data/Spotifake.jpeg'
+
+
+
+import {Content as TestText} from '../content/testcontent.md'
+
+import {Content as Autotrello} from '../content/projects/autotrello.md'
+import {Content as SPainter} from '../content/projects/SPainter.md'
+import {Content as Spotifake} from '../content/projects/spotifake.md'
+import {Content as Whiteboard} from '../content/projects/whiteboard.md'
+import {Content as Entsalzer} from '../content/projects/entsalzer.md'
+
+
+---
+<div style="grid-column: 1 / -1; width: 100%; justify-content: center; display: flex">
+    <PostIt pinImage={Pin02} postItImage={PostIt02} postItScale={40} fontSizeMultiplier={1.4}>
+        <h1>MY PROJECTS</h1>
+    </PostIt>
+</div>
+
+<Sticker href="." text="home" image={StickerArrowRight} />
+
+<PostIt pinImage={Pin02} postItImage={PostIt03} fontSizeMultiplier={0.8}>
+    <Autotrello />
+</PostIt>
+
+<Image tapeImage={Tape01} image={Trello} alt="A picture of a schedule in ported to Trello" />
+
+<PostIt pinImage={Pin02} postItImage={PostIt01} fontSizeMultiplier={0.7} postItScale={120}>
+    <SPainter />
+</PostIt>
+
+<Image tapeImage={Tape01} image={Spainter} alt="A picture of Space Invaders running in the console" />
+<Image tapeImage={Tape01} image={Newpainter} alt="A rotating cat displayed in the console" />
+
+
+<Image tapeImage={Tape01} image={Mindentsalzer} alt="A picture of the minddesalinator" />
+<Image tapeImage={Tape01} image={Mindfrontend} alt="A picture of the mindfrontend" />
+
+
+<PostIt pinImage={Pin01} postItImage={PostIt01} fontSizeMultiplier={0.8} postItScale={100}>
+    <Entsalzer />
+</PostIt>
+
+
+<PostIt pinImage={Pin01} postItImage={PostIt03} fontSizeMultiplier={0.7} postItScale={120}>
+    <Whiteboard />
+</PostIt>
+
+<Image tapeImage={Tape01} image={WhiteboardApp} alt="A picture of the Whiteboardapp"/>
+
+<div />
+
+<Sticker href="https://github.com/Keinstein0" text="see these projects on my GitHub" image={StickerGithub} />
+
+<PostIt pinImage={Pin01} postItImage={PostIt01} fontSizeMultiplier={0.8} postItScale={100}>
+    <Spotifake />
+</PostIt>
+
+<Image tapeImage={Tape01} image={SpotifakeApp} alt="A picture of the Whiteboardapp"/>
+
